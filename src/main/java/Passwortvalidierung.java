@@ -1,4 +1,4 @@
-import java.util.Scanner;
+
 import java.util.regex.Pattern;
 
 /*
@@ -18,7 +18,7 @@ public class Passwortvalidierung {
     public static final int MIN_LENGTH = 8;
     public static void main(String[] args) {
 
-        boolean checkPasswordValid = false;
+        boolean checkPasswordValid = true;
 
         do {
             // Return zwischenspeichern in die Variable Password
@@ -34,15 +34,15 @@ public class Passwortvalidierung {
             if(!checkForbiddenCase){
                 System.out.println("Passwort nicht zulässig");
             }
-            else if((checkPwLength && checkPwNumber && checkPwUpperCase && checkForbiddenCase)){
-                checkPasswordValid = true;
+            else if((checkPwLength && checkPwNumber && checkPwUpperCase)){
+                checkPasswordValid = false;
 
             }
             else {
                 System.out.println("Passwort muss mindestens 8 Zeichen und eine Zahl enthalten + Großschreibung");
             }
         }
-        while (!checkPasswordValid);
+        while (checkPasswordValid);
     }
     //Methode für Passworteingabe
     //  inputPassword()
@@ -64,7 +64,7 @@ public class Passwortvalidierung {
         int passwordLength = password.length();
         if (passwordLength < MIN_LENGTH){
             System.out.println("password is too short!");
-            // hatten hier ein Problem das dass Passwort nicht in die Main übergeben wurde
+            // hatten hier ein Problem das, dass Passwort nicht in die Main übergeben wurde
             // inputPassword();
             return false;
         }
