@@ -11,13 +11,14 @@ Schreibe eine Passwortvalidierung.
 public class Passwortvalidierung {
     public static void main(String[] args) {
 
-        // Return zwischenspeichern in die Variable Password
-       String password = inputPassword();
-      // System.out.println(password);
-       // Passwortlänge von String password checken
-       checkPasswordLength(password);
-      // System.out.println(password);
-       checkPasswordForNumber(password);
+            // Return zwischenspeichern in die Variable Password
+            String password = inputPassword();
+            // System.out.println(password);
+            // Passwortlänge von String password checken
+            checkPasswordLength(password);
+            // System.out.println(password);
+            checkPasswordForNumber(password);
+            //System.out.println("Möchtest du das Passwort erneut eingeben? :" +);
     }
 
     //Methode für Passworteingabe
@@ -35,16 +36,16 @@ public class Passwortvalidierung {
     }
 
 
-    public static int checkPasswordLength(String password) {
+    public static boolean checkPasswordLength(String password) {
 
         int passwordLength = password.length();
         if (passwordLength < 8){
-         //   System.out.println("password is too short!");
-            inputPassword();
-
+            System.out.println("password is too short!");
+            // hatten hier ein Problem das dass Passwort nicht in die Main übergeben wurde
+            // inputPassword();
+            return false;
         }
-
-        return passwordLength;
+        return true;
     }
 
     public static boolean checkPasswordForNumber(String input) {

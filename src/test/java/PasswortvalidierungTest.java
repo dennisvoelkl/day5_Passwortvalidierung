@@ -23,11 +23,22 @@ class PasswortvalidierungTest {
     //given
     String input = "password";
     //when
-    int actualLength = Passwortvalidierung.checkPasswordLength(input);
+    boolean actualLength = Passwortvalidierung.checkPasswordLength(input);
     //then
     //assertTrue(8,actualLength);
-    assertEquals(8,actualLength);
+    assertTrue(actualLength);
 }
+
+    @Test
+    public void passwordLengthUnder8(){
+        //given
+        String input = "pwd";
+        //when
+        boolean actualLength = Passwortvalidierung.checkPasswordLength(input);
+        //then
+        //assertTrue(8,actualLength);
+        assertFalse(actualLength);
+    }
 
 @Test
     public void passwordContainsNumber(){
