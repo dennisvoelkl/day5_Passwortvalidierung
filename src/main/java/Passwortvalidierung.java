@@ -1,3 +1,4 @@
+import java.util.Scanner;
 /*
 Aufgabe: Passwortvalidierung
 Schreibe eine Passwortvalidierung.
@@ -12,10 +13,16 @@ public class Passwortvalidierung {
 
 
     }
-
     //Methode für Passworteingabe
     //  inputPassword()
     //
+    public static String inputPassword(String input) {
+        System.out.println("Bitte gebe ein Passwort ein:");
+        return "abc1234";
+
+    }
+
+
 
 
 }
