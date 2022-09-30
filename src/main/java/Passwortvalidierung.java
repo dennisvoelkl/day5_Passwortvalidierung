@@ -13,10 +13,10 @@ public class Passwortvalidierung {
 
         // Return zwischenspeichern in die Variable Password
        String password = inputPassword();
-       System.out.println(password);
+      // System.out.println(password);
        // Passwortlänge von String password checken
        checkPasswordLength(password);
-       System.out.println(password);
+      // System.out.println(password);
        checkPasswordForNumber(password);
     }
 
@@ -39,7 +39,7 @@ public class Passwortvalidierung {
 
         int passwordLength = password.length();
         if (passwordLength < 8){
-            System.out.println("password is too short!");
+         //   System.out.println("password is too short!");
             inputPassword();
 
         }
@@ -52,7 +52,7 @@ public class Passwortvalidierung {
             return true;
         }
 
-        System.out.println("Password should contain a numeric charachter");
+       // System.out.println("Password should contain a numeric charachter");
         return false;
 
     }
