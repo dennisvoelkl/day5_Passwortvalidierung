@@ -79,5 +79,25 @@ class PasswortvalidierungTest {
         //then
         assertTrue(actual);
     }
+    @Test
+    public void allowedPassword(){
+    //given
+        String input = "password1234";
+
+        //when
+        boolean actual =Passwortvalidierung.checkForbiddenPassword(input);
+        //then
+        assertTrue(actual);
+    }
+    @Test
+    public void forbiddenPassword(){
+        //given
+        String input = "password123";
+
+        //when
+        boolean actual =Passwortvalidierung.checkForbiddenPassword(input);
+        //then
+        assertFalse(actual);
+    }
 
 }

@@ -15,7 +15,10 @@ Bonus:
  */
 public class Passwortvalidierung {
     public static void main(String[] args) {
+
+
         boolean checkPasswordValid = false;
+
         do {
             // Return zwischenspeichern in die Variable Password
             String password = inputPassword();
@@ -25,8 +28,12 @@ public class Passwortvalidierung {
             // System.out.println(password);
             boolean checkPwNumber = checkPasswordForNumber(password);
             boolean checkPwUpperCase = checkPasswordForUpperCaseLetters(password);
+            boolean checkForbiddenCase = checkForbiddenPassword(password);
 
-            if((checkPwLength && checkPwNumber && checkPwUpperCase)){
+            if(!checkForbiddenCase){
+                System.out.println("Passwort nicht zulässig");
+            }
+            else if((checkPwLength && checkPwNumber && checkPwUpperCase && checkForbiddenCase)){
                 checkPasswordValid = true;
 
             }
@@ -88,5 +95,15 @@ public class Passwortvalidierung {
             }
         }
         return false;
+    }
+
+    public static boolean checkForbiddenPassword(String password) {
+        String[] forbiddenPasswords = {"Password123","Abcde123","Hallowelt123"};
+        for(String passwords : forbiddenPasswords){
+            if(password.equals(passwords)){
+                return false;
+            }
+        }
+        return true;
     }
 }
