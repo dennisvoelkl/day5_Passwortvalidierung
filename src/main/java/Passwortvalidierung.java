@@ -11,9 +11,12 @@ Schreibe eine Passwortvalidierung.
 public class Passwortvalidierung {
     public static void main(String[] args) {
 
-        inputPassword();
-
+        // Return zwischenspeichern in die Variable Password
+       String password = inputPassword();
+       // Passwortlänge von String password checken
+       checkPasswordLength(password);
     }
+
     //Methode für Passworteingabe
     //  inputPassword()
     //
@@ -29,7 +32,13 @@ public class Passwortvalidierung {
     }
 
 
+    public static int checkPasswordLength(String input) {
+        int passwordLength = input.length();
+        if (passwordLength > 8){
+            System.out.println("password is too short!");
+        }
 
-
+        return passwordLength;
+    }
 }
 
