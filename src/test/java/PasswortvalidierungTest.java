@@ -92,7 +92,7 @@ class PasswortvalidierungTest {
     @Test
     public void forbiddenPassword(){
         //given
-        String input = "password123";
+        String input = "Password123";
 
         //when
         boolean actual =Passwortvalidierung.checkForbiddenPassword(input);

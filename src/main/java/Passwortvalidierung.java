@@ -14,8 +14,9 @@ Bonus:
 6. Verbiete "schlechte" Passwörter wie "passwort" oder "123456"
  */
 public class Passwortvalidierung {
+    public static  String[] forbiddenPasswords = {"Password123","Abcde123","Hallowelt123"};
+    public static final int MIN_LENGTH = 8;
     public static void main(String[] args) {
-
 
         boolean checkPasswordValid = false;
 
@@ -61,7 +62,7 @@ public class Passwortvalidierung {
     public static boolean checkPasswordLength(String password) {
 
         int passwordLength = password.length();
-        if (passwordLength < 8){
+        if (passwordLength < MIN_LENGTH){
             System.out.println("password is too short!");
             // hatten hier ein Problem das dass Passwort nicht in die Main übergeben wurde
             // inputPassword();
@@ -98,7 +99,7 @@ public class Passwortvalidierung {
     }
 
     public static boolean checkForbiddenPassword(String password) {
-        String[] forbiddenPasswords = {"Password123","Abcde123","Hallowelt123"};
+        //String[] forbiddenPasswords = {"Password123","Abcde123","Hallowelt123"};
         for(String passwords : forbiddenPasswords){
             if(password.equals(passwords)){
                 return false;
