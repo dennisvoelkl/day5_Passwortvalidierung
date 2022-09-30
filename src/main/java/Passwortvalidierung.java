@@ -11,15 +11,21 @@ Schreibe eine Passwortvalidierung.
 public class Passwortvalidierung {
     public static void main(String[] args) {
 
+        inputPassword();
 
     }
     //Methode für Passworteingabe
     //  inputPassword()
     //
-    public static String inputPassword(String input) {
+    public static String inputPassword() {
         System.out.println("Bitte gebe ein Passwort ein:");
-        return "abc1234";
 
+//        Scanner inputKeyboard = new Scanner(System.in);
+//        input = inputKeyboard.nextLine();
+
+        String input = new java.util.Scanner(System.in).nextLine();
+
+        return input;
     }
 
 
