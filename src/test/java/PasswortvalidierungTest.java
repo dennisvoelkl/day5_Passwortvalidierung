@@ -28,4 +28,25 @@ class PasswortvalidierungTest {
     //assertTrue(8,actualLength);
     assertEquals(8,actualLength);
 }
+
+@Test
+    public void passwordContainsNumber(){
+    //given
+    String input = "password1";
+    //when
+    boolean actual = Passwortvalidierung.checkPasswordForNumber(input);
+    //then
+
+    assertTrue(actual);
+}
+    @Test
+    public void passwordContainsNoNumber(){
+        //given
+        String input = "passwordasd";
+        //when
+        boolean actual = Passwortvalidierung.checkPasswordForNumber(input);
+        //then
+
+        assertFalse(actual);
+    }
 }

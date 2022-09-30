@@ -16,6 +16,8 @@ public class Passwortvalidierung {
        System.out.println(password);
        // Passwortlänge von String password checken
        checkPasswordLength(password);
+       System.out.println(password);
+       checkPasswordForNumber(password);
     }
 
     //Methode für Passworteingabe
@@ -38,9 +40,23 @@ public class Passwortvalidierung {
         int passwordLength = password.length();
         if (passwordLength < 8){
             System.out.println("password is too short!");
+            inputPassword();
+
         }
 
         return passwordLength;
     }
+
+    public static boolean checkPasswordForNumber(String input) {
+        if(input.matches(".*[0-9].*")){
+            return true;
+        }
+
+        System.out.println("Password should contain a numeric charachter");
+        return false;
+
+    }
+
+    // System.out.println(Str.matches(".*[0-9].*"));
 }
 
