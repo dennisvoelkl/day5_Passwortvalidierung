@@ -10,7 +10,7 @@ Schreibe eine Passwortvalidierung.
  */
 public class Passwortvalidierung {
     public static void main(String[] args) {
-        boolean test = false;
+        boolean checkPasswordValid = false;
         do {
             // Return zwischenspeichern in die Variable Password
             String password = inputPassword();
@@ -20,15 +20,15 @@ public class Passwortvalidierung {
             // System.out.println(password);
             boolean checkPwNumber=checkPasswordForNumber(password);
 
-            if((checkPwLength && checkPwNumber) == true){
-                test = true;
+            if((checkPwLength && checkPwNumber)){
+                checkPasswordValid = true;
 
             }
             else {
                 System.out.println("Passwort muss mindestens 8 Zeichen und eine Zahl enthalten");
             }
         }
-        while (test == false);
+        while (!checkPasswordValid);
     }
     //Methode für Passworteingabe
     //  inputPassword()
