@@ -60,4 +60,24 @@ class PasswortvalidierungTest {
 
         assertFalse(actual);
     }
+
+    @Test
+    public void passwordContainsUpperCaseLetters(){
+        //given
+        String input = "passwordasd";
+        //when
+        boolean actual = Passwortvalidierung.checkPasswordForUpperCaseLetters(input);
+        //then
+        assertFalse(actual);
+    }
+    @Test
+    public void passwordContainsLowerCaseLetters(){
+        //given
+        String input = "Passwordasd";
+        //when
+        boolean actual = Passwortvalidierung.checkPasswordForUpperCaseLetters(input);
+        //then
+        assertTrue(actual);
+    }
+
 }

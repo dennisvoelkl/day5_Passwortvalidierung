@@ -1,4 +1,6 @@
 import java.util.Scanner;
+import java.util.regex.Pattern;
+
 /*
 Aufgabe: Passwortvalidierung
 Schreibe eine Passwortvalidierung.
@@ -7,6 +9,9 @@ Schreibe eine Passwortvalidierung.
 2. Überlege dir, wie die Methoden aussehen müssen.
 3. Schreibe jeweils erst einen Test und dann die Funktionalität
 4. Überprüfe erst die Länge des Passworts und dann, ob Zahlen enthalten sind
+Bonus:
+5. Checke, ob kleine/große Buchstaben enthalten sind
+6. Verbiete "schlechte" Passwörter wie "passwort" oder "123456"
  */
 public class Passwortvalidierung {
     public static void main(String[] args) {
@@ -18,14 +23,15 @@ public class Passwortvalidierung {
             // Passwortlänge von String password checken
             boolean checkPwLength = checkPasswordLength(password);
             // System.out.println(password);
-            boolean checkPwNumber=checkPasswordForNumber(password);
+            boolean checkPwNumber = checkPasswordForNumber(password);
+            boolean checkPwUpperCase = checkPasswordForUpperCaseLetters(password);
 
-            if((checkPwLength && checkPwNumber)){
+            if((checkPwLength && checkPwNumber && checkPwUpperCase)){
                 checkPasswordValid = true;
 
             }
             else {
-                System.out.println("Passwort muss mindestens 8 Zeichen und eine Zahl enthalten");
+                System.out.println("Passwort muss mindestens 8 Zeichen und eine Zahl enthalten + Großschreibung");
             }
         }
         while (!checkPasswordValid);
@@ -61,12 +67,26 @@ public class Passwortvalidierung {
         if(input.matches(".*[0-9].*")){
             return true;
         }
-
        // System.out.println("Password should contain a numeric charachter");
         return false;
-
     }
 
-    // System.out.println(Str.matches(".*[0-9].*"));
-}
+    public static boolean checkPasswordForUpperCaseLetters(String input) {
+        /*
+        Pattern Pattern[] = new Pattern[1];
+        //Pattern[] testArray = new Pattern[1];
+        Pattern[0] = Pattern.compile(".*[A-Z].*");
 
+        if ( input.matches(".*[A-Z]+$.*")){
+            return true;
+        }
+        */
+        for(int i = 0; i< input.length(); i++){
+            char c = input.charAt(i);
+            if(Character.isUpperCase(c)){
+                return true;
+            }
+        }
+        return false;
+    }
+}
